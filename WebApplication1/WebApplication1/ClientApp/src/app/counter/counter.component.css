@@ -1,0 +1,126 @@
+.Titulo {
+  width: 97%;
+  margin: auto;
+  min-height: 80px;
+}
+
+.Titulo span {
+    color: cornflowerblue;
+}
+
+.control {
+  width: 100%;
+  height: 40px;
+  border-radius: 5px;
+}
+input::-webkit-input-placeholder {
+  font-size: 24px;
+  color: cornflowerblue;
+}
+
+
+.main {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, auto);
+  grid-template-areas: "imagen imagen ingredientes ingredientes"
+                       "imagen imagen ingredientes ingredientes"
+                       "imagen imagen  precio   precio";
+             
+}
+
+
+.imagen{
+  grid-area: imagen;
+}
+
+.ingredientes {
+  grid-area: ingredientes;
+}
+
+.precio{
+  grid-area:precio;
+}
+
+.imagen .contro4{
+  width: 90%;
+  height: 220px;
+  border-radius: 5px;
+  margin-top:25px;
+  background-image:url(../../assets/imagen.jpg);
+  background-size: 80%;
+  background-position-x:center;
+  background-repeat:no-repeat;
+  border:2px solid;
+
+}
+
+
+imagen h1 {
+  text-align: center;
+}
+
+.imagen input {
+  width: 0;
+  min-height: 290px;
+ 
+}
+
+
+.ingredientes textarea{
+  width:100%;
+  height: 200px;
+  border-radius:5px;
+}
+
+.botones .btnGuardar {
+  width: 48.5%;
+  color: cornflowerblue;
+  border-color: cornflowerblue;
+  background: white;
+  border-radius:3px;
+}
+
+.botones .btnGuardar:focus {
+  width: 48.5%;
+  color: white;
+  background: #B0ADAD;
+}
+
+.botones .btnreset {
+  width: 48.5%;
+  color: cornflowerblue;
+  border-color: cornflowerblue;
+  background: white;
+  border-radius: 3px;
+}
+
+.botones .btnreset:focus {
+  width: 48.5%;
+  color: white;
+  background: #B0ADAD;
+}
+
+@media only screen and (max-width:720px) {
+
+  .main {
+    grid-template-areas: "imagen imagen imagen imagen"
+                          "ingredientes ingredientes ingredientes ingredientes"
+                          "precio precio  precio   precio";
+
+  }
+
+  .imagen {
+    grid-area: imagen;
+  }
+
+  .ingredientes {
+    grid-area: ingredientes;
+  }
+
+  .precio {
+    grid-area: precio;
+  }
+}
+

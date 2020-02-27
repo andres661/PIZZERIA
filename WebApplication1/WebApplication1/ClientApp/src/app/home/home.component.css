@@ -1,0 +1,27 @@
+.col{
+  text-align:center;
+}
+.card-title span{
+   color:cornflowerblue;
+}
+
+img {
+  width: 160px;
+  height: 130px;
+  padding: 0;
+}
+
+.Titulo {
+  width: 97%;
+  margin: auto;
+  min-height: 80px;
+}
+
+.Titulo span {
+    color: cornflowerblue;
+}
+
+.boton{
+   float:right;
+   background:cornflowerblue;  
+}

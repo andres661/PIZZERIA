@@ -1,0 +1,27 @@
+<div class="Titulo">
+  <h1>
+    <span>Menu de pizzas</span>
+    <button routerLink="/contenido" type="button" class="btn btn-primary boton">Crear pizza</button>
+  </h1>
+</div>
+
+<div class="card-group card-deck">
+  <div class="row row-cols-1 row-cols-md-4">
+    <div class="col mb-4" *ngFor="let p of pizza">
+      <div class="card border-light" style="width: 18rem;">
+        <div class="card-body">
+          <div class="button" routerLink="/contenido" (click)="onEdit(p)">
+            <div *ngIf="!p.foto">
+              <img src="../../assets/error.jpg" class="card-img-top" alt="...">
+            </div>
+            <div *ngIf="p.foto"><img [src]="'data:image/jpg;base64,'+ p.foto" class="card-img-top" alt="..."></div>
+          </div>
+          <h5 class="card-title"><span>{{p.nombre}}</span></h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{p.precio}}</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

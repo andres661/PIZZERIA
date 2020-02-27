@@ -1,0 +1,61 @@
+<div class="Titulo">
+  <h1>
+    <span *ngIf="!producto.seleccionarProducto.foto">Crear Pizza</span>
+    <span *ngIf="producto.seleccionarProducto.foto">Modificar Pizza</span>
+  </h1>
+</div>
+<form #Producto="ngForm" (ngSubmit)="Enviar(Producto)">
+
+    <!-->ACTUALIZAR</!-->
+    <input type="hidden" name="id" #id="ngModel" [(ngModel)]="producto.seleccionarProducto.id" />
+
+    <div class="form-group">
+      <input class="control" type="text"
+             name="nombre"
+             #name="ngModel"
+             [(ngModel)]="producto.seleccionarProducto.nombre"
+             placeholder="Nombre de pizza" ngModel required>
+    </div>
+
+    <div class="main">
+      <div class="imagen">
+        <input class="contro4" type="file"
+               name="foto"
+               #name="ngModel"
+               [(ngModel)]="producto.seleccionarProducto.foto"
+               (change)="picked($event,1)"
+               placeholder=""
+               >
+        <div *ngIf="!producto.seleccionarProducto.foto"><h1>Seleccionar Imagen</h1></div>
+      </div>
+
+      <div class="ingredientes">
+        <label>Ingredientes</label>
+        <textarea class="control2" type="text"
+                  name="ingredientes"
+                  #name="ngModel"
+                  [(ngModel)]="producto.seleccionarProducto.ingredientes"
+                  placeholder="" ngModel required>
+              </textarea>
+      </div>
+
+      <div class="precio">
+        <label>Precio</label>
+        <input class="form-control" type="number"
+               name="precio"
+               #name="ngModel"
+               [(ngModel)]="producto.seleccionarProducto.precio"
+               placeholder="" ngModel required>
+        <div class="botones">
+          <div class="form-group" style="margin-top: 6px;">
+            <button class="btnGuardar" [disabled]="Producto.invalid" type="submit" style="margin-right: 2px;">
+              <i class="fas fa-plus-circle"></i> Guardar
+            </button>
+            <button class="btnreset" type="reset" routerLink="/" (click)="resetForm(Producto)">
+              <i class="fas fa-sync-alt"></i> Canselar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>

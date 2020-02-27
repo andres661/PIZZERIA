@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace WebApplication1.Models.ViewModels
+{
+    public class Componentes
+    {
+        public int id { get; set; }
+        public string nombre { get; set; }
+        public string ingredientes { get; set; }
+        public double precio { get; set; }
+        public byte[] foto { get; set; }
+    }
+}
